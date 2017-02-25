@@ -10,20 +10,15 @@ public class Stock {
     public double[] data;
 
     Stock(String s){
-        data = new double[6];
+        data = new double[9];
         String[] s1 = new String[7];
         s1 = s.split("[,]");
         date = s1[0];
-        System.out.print(date + " ");
         
         for (int i=0; i<6; i++){
             data[i]  = Double.parseDouble(s1[i+1]);
-           
-            System.out.print(data[i]+ " ");
+
         }
-        
-        
-        
-        System.out.println();
+
     }
 }
