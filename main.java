@@ -29,9 +29,9 @@ public class main extends JFrame{
             super("Stock Analysis");
             setSize(800,600);
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            add(new View());
+            add(new StockSystem());
             setVisible(true);
         }
-        View view = new View();
+        StockSystem view = new StockSystem();
 
 }

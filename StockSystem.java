@@ -1,6 +1,3 @@
-import com.sun.beans.editors.FontEditor;
-import org.jdatepicker.JDatePanel;
-import org.jdatepicker.JDatePicker;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
@@ -20,7 +17,7 @@ import java.io.IOException;
 /**
  * Created by mo on 2017-02-23.
  */
-public class View extends JPanel {
+public class StockSystem extends JPanel {
 
     public JLabel dateLabel, periodLabel;
     public JButton displayButton;
@@ -34,7 +31,7 @@ public class View extends JPanel {
     String startDate, endDate;
     XYSeries xySeries1, xySeries2, xySeries3;
 
-    public View() {
+    public StockSystem() {
         super();
         setVisible(true);
         setLayout(null);
@@ -139,11 +136,6 @@ public class View extends JPanel {
                     today = i;
             }
             flag = decide(period1, period2, today);
-            for (int i=375; i<425; i++)
-            {
-                System.out.print(stock[i].date+": "+decide(period1,period2,i));
-                System.out.println();
-            }
             JFreeChart chart = ChartFactory.createLineChart("Stock Analysis", "Time", "Price", dataset);
             chart.setBackgroundPaint(Color.white);
             chart.getTitle().setPaint(Color.red);
@@ -156,9 +148,9 @@ public class View extends JPanel {
             jLabel.setBounds(580, 530, 150, 50);
             jLabel.setBackground(Color.red);
             jLabel.setOpaque(true);
-            if (flag ==1)
+            if (flag ==2)
                 jLabel.setText("Buy");
-            else if (flag ==2)
+            else if (flag ==1)
                 jLabel.setText("Sell");
             frame.add(jLabel);
             frame.setVisible(true);
